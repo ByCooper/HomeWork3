@@ -6,6 +6,8 @@ public class Main {
         task4();
         task5();
         task6();
+        task7();
+        task8();
     }
     public static void task1 () {
         System.out.println("Задача №1" + "\n");
@@ -102,6 +104,75 @@ public class Main {
         System.out.println("Общий вес спортзавтрака составляет " + weightTotalBreakfastInGramm + " грамм");
         double weightTotalBreakfastInKilo = weightTotalBreakfastInGramm / 1000.0;
         System.out.println("Общий вес спортзавтрака составляет " + weightTotalBreakfastInKilo + " килограмма");
+
+    }
+    public static void task7 () {
+        System.out.println("\n" + "Задача №7" + "\n");
+
+        //Необходимо сбросить 7 кг спортсмену
+        int loseWeightNeed = 7;
+
+        //В килограмме 1000 грамм
+        int grammInKilo = 1000;
+        int totalLoseWeight = loseWeightNeed * grammInKilo;
+
+        //1 вариант рациона для сброса веса позволяет терять 250 грамм в день
+        int loseDayWeight1 = 250;
+
+        //2 вариант рациона для сброса веса позволяет терять 500 грамм в день
+        int loseDayWeight2 = 500;
+
+        //Необходимо рассчитать количество затраченых дней на достижение рузельтата для двух рационов
+        //Рацион 1
+        int totalDayDiet1 = totalLoseWeight / loseDayWeight1;
+        System.out.println("Придерживаясь рациона №1, спортсмен добьется потери " + loseWeightNeed + " килограммов за " + totalDayDiet1 + " дней");
+
+        //Рацион 2
+        int totalDayDiet2 = totalLoseWeight / loseDayWeight2;
+        System.out.println("Придерживаясь рациона №2, спортсмен добьется потери " + loseWeightNeed + " килограммов за " + totalDayDiet2 + " дней");
+
+    }
+    public static void task8 () {
+        System.out.println("\n" + "Задача №8" + "\n");
+        //Годовое повышение зарплаты составляет 10 %
+        double percentYearHigh = 10;
+        int totalMonthInYear = 12;
+
+        //Задаем ежемесячные зарплаты для установленных сотрудников
+        //Зарплата Маши
+        int salaryMasha = 67760;
+
+        //Зарплата Дениса
+        int salaryDenis = 83690;
+
+        //Зарплата Кристины
+        int salaryKris = 76230;
+
+        //Вычисляем зарплату после повышения на 10 %
+        double newSalaryMasha = ((percentYearHigh / 100) * salaryMasha) + salaryMasha;
+        double newSalaryDenis = ((percentYearHigh / 100) * salaryDenis) + salaryDenis;
+        double newSalaryKris = ((percentYearHigh / 100) * salaryKris) + salaryKris;
+        System.out.println("Зарплаты после повышения составляют: " + "\n" + "Маша = " + newSalaryMasha + "\n" + "Денис = " + newSalaryDenis + "\n" + "Кристина = " + newSalaryKris);
+
+        //Устанавливаем годовые зарплаты до повышения и после
+        //Годовые зарплаты Маши
+        double totalYearSalaryMasha = salaryMasha * totalMonthInYear;
+        double newTotalYearSalaryMasha = newSalaryMasha * totalMonthInYear;
+        double highSalaryMasha = newTotalYearSalaryMasha % totalYearSalaryMasha;
+        System.out.println("Маша теперь получает " + newSalaryMasha + " рублей. Годовой доход вырос на " + highSalaryMasha + " рублей");
+
+        //Годовые зарплаты Дениса
+        double totalYearSalaryDenis = salaryDenis * totalMonthInYear;
+        double newTotalYearSalaryDenis = newSalaryDenis * totalMonthInYear;
+        double highSalaryDenis = newTotalYearSalaryDenis % totalYearSalaryDenis;
+        System.out.println("Денис теперь получает " + newSalaryDenis + " рублей. Годовой доход вырос на " + highSalaryDenis + " рублей");
+
+
+        //Годовые зарплаты Кристины
+        double totalYearSalaryKris = salaryKris * totalMonthInYear;
+        double newTotalYearSalaryKris = newSalaryKris * totalMonthInYear;
+        double highSalaryKris = newTotalYearSalaryKris % totalYearSalaryKris;
+        System.out.println("Кристина теперь получает " + newSalaryKris + " рублей. Годовой доход вырос на " + highSalaryKris + " рублей");
 
     }
 }
